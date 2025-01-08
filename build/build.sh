@@ -24,13 +24,13 @@ if [[ $CPU == "aarch64" ]] && [[ $OSDIST == "ubuntu" ]]; then
     # On ARM64 Ubuntu use GCC version 8 if available since default
     # (GCC version 7) has random Internal Compiler Issues compiling XRT
     # C++14 code
-    gcc-8 --version > /dev/null 2>&1
+    gcc --version > /dev/null 2>&1
     status1=$?
-    g++-8 --version > /dev/null 2>&1
+    g++ --version > /dev/null 2>&1
     status2=$?
     if [[ $status1 == 0 ]] && [[ $status2 == 0 ]]; then
-	export CC=gcc-8
-	export CXX=g++-8
+	export CC=gcc-11
+	export CXX=g++-11
     fi
 fi
 
@@ -337,7 +337,7 @@ if [[ $opt == 1 ]]; then
 fi
 
 # Verify compilation on edge
-if [[ $CPU != "aarch64" ]] && [[ $edge == 1 ]]; then
+if [[ $CPU == "aarch64" ]] && [[ $edge == 1 ]]; then
   mkdir -p $edge_dir
   cd $edge_dir
 

@@ -235,8 +235,8 @@ ub_package_list()
     # Use GCC8 on ARM64 Ubuntu as GCC7 randomly crashes with Internal Compiler Error on
     # Travis CI ARM64 platform
     if [ $ARCH == "aarch64" ]; then
-        UB_LIST+=( gcc-8 )
-        UB_LIST+=( g++-8 )
+        UB_LIST+=( gcc-11 )
+        UB_LIST+=( g++-11 )
     fi
 
 }
