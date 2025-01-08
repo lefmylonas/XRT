@@ -2,7 +2,7 @@ FROM ubuntu:22.04
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-COPY . /home/ubuntu
+COPY . /home/ubuntu/XRT
 
 WORKDIR /home/ubuntu/XRT
 
